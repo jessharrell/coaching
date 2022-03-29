@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.App-header {
+  min-height: 10vh;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  color: white;
+}
+
+.Button-row {
+  min-height: 10vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  margin-bottom: 2rem;
+}
+
+.Button-row-button {
+  width: 25vw;
+}
+
+.Users-section {
+  display: grid;
+  flex-direction: column;
+  flex-grow: 2;
+  background-color: azure;
+}
+
+.Review-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: navajowhite;
+}
+
+.Title-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: gold;
+}
+
+.Title-bar p {
+  position: relative;
+}
+
+.Title-bar button {
+  position: absolute;
+  right: 0;
+}
+
+.Flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Flex-row-column {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.User-row:nth-child(even){
+  background-color: cadetblue;
+}
+
+.Approval-row:nth-child(even){
+  background-color: palegoldenrod;
+}
+
