@@ -1,9 +1,24 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {MouseEventHandler, useState} from 'react';
 import UserRow from "./UserRow";
 
-function Review(props) {
-    const [approvalItems, setApprovalItems] = useState([]);
+type ReviewProps = {
+    hide: MouseEventHandler;
+}
+
+type User = {
+    firstName: string;
+    lastName: string;
+    joinDate: string;
+}
+
+type ApprovalItem ={
+    user: User;
+    type: string;
+}
+
+function Review(props: ReviewProps) {
+    const [approvalItems, setApprovalItems] = useState<ApprovalItem[]>([]);
 
     React.useEffect(() => {
         const fetchApprovals = async () => {
@@ -14,7 +29,7 @@ function Review(props) {
         fetchApprovals();
     }, [setApprovalItems]);
 
-    function deleteUser(user){
+    function deleteUser(user: User){
         const requestOptions = {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
@@ -23,7 +38,7 @@ function Review(props) {
         fetch('http://localhost:3003/deleteUser', requestOptions);
     }
 
-    function addUser(user){
+    function addUser(user: User){
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

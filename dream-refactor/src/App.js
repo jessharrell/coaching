@@ -3,6 +3,7 @@ import React from 'react';
 import Review from './Review'
 import Users from './Users'
 import Spinner from 'react-bootstrap/Spinner';
+import {FormCheckInputProps} from "react-bootstrap/FormCheckInput";
 
 function App() {
     const [showAdd, setShowAdd] = React.useState(false);
@@ -57,7 +58,7 @@ function App() {
           {isLoading && <Spinner animation="border" />}
           <Users users={users}/>
           {showAdd &&
-               <div>
+               <div className="Add-user">
                    <div>
                        <form onSubmit={saveAndClose}>
                            <label>

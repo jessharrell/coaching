@@ -1,0 +1,7 @@
+{
+  "sourceFileName": "./src/index.js",
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
+}
