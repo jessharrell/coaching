@@ -3,7 +3,6 @@ import React from 'react';
 import Review from './Review'
 import Users from './Users'
 import Spinner from 'react-bootstrap/Spinner';
-import {FormCheckInputProps} from "react-bootstrap/FormCheckInput";
 
 function App() {
     const [showAdd, setShowAdd] = React.useState(false);

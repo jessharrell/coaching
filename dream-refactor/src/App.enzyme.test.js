@@ -2,7 +2,6 @@ import React from 'react'
 import { mount } from 'enzyme';
 import App from './App';
 const fetchMock = require('fetch-mock-jest');
-import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
 describe("The App", () => {

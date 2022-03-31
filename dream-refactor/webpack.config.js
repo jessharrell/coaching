@@ -1,7 +1,9 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     devtool: 'inline-source-map',
     target: 'node', // use require() & use NodeJs CommonJS style
@@ -32,7 +34,18 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist'),
+    },
+    plugins: [
+        new InterpolateHtmlPlugin({'PUBLIC_URL': 'public'})
+    ],
+    devServer: {
+        compress: true,
+        hot: true,
+        open: true,
+        port: 3000,
+        static: 'dist',
+        historyApiFallback: true,
     },
 };
 
